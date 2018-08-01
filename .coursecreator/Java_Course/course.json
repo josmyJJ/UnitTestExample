@@ -1,0 +1,77 @@
+{
+  "summary": "Introductio to java. ",
+  "title": "Java Course",
+  "programming_language": "JAVA",
+  "language": "en",
+  "items": [
+    {
+      "id": 0,
+      "update_date": "Dec 31, 1969 7:00:00 PM",
+      "title": "lesson1",
+      "task_list": [
+        {
+          "name": "Hello, Java!",
+          "stepic_id": 0,
+          "task_files": {
+            "Task.java": {
+              "name": "Task.java",
+              "text": "class HelloJava {\n  public static void main(String[] args) {\n    System.out.println(sayHello());\n  }\n\n  public static String sayHello() {\n    return TODO();\n  }\n}",
+              "placeholders": [
+                {
+                  "offset": 149,
+                  "length": 6,
+                  "hints": [
+                    "Use \u003ci\u003eHello, Java\u003c/i\u003e string"
+                  ],
+                  "possible_answer": "\"Hello, Java!\"",
+                  "placeholder_text": "TODO()"
+                }
+              ]
+            },
+            "Calculator.java": {
+              "name": "Calculator.java",
+              "text": "public class Calculator {\n\n  private static int num1 \u003d 4;\n  private static int num2 \u003d 4;\n\n  public static int add(){\n    return num1 + num2;\n  }\n}\n",
+              "placeholders": []
+            }
+          },
+          "test_files": {
+            "HelloJavaTest.java": "import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class HelloJavaTest {\n\n  @Test\n  public void testSolution() {\n    assertEquals(\"You should say hello to Java\", \"Hello, Java!\", HelloJava.sayHello());\n  }\n\n  @Test\n  public void testadd() {\n    assertEquals(\"Solution should be 8\",\n            8 , Calculator.add());\n  }\n\n}"
+          },
+          "description_text": "\u003chtml\u003e\n    Task HTML Page!\n\u003cbr\u003e\n\u003c/html\u003e",
+          "description_format": "html",
+          "additional_files": {},
+          "update_date": "Dec 31, 1969 7:00:00 PM",
+          "feedback_link": {
+            "link_type": "STEPIK"
+          },
+          "task_type": "edu"
+        }
+      ],
+      "type": "lesson"
+    },
+    {
+      "id": 0,
+      "update_date": "Dec 31, 1969 7:00:00 PM",
+      "title": "Edu additional materials",
+      "task_list": [
+        {
+          "name": "Edu additional materials",
+          "stepic_id": 0,
+          "task_files": {},
+          "test_files": {},
+          "description_format": "html",
+          "additional_files": {
+            "build.gradle": "buildscript {\n    repositories {\n        mavenCentral()\n    }\n}\n\ndef printOutput(def output) {\n    return tasks.create(\"printOutput\") {\n        for (line in output.toString().readLines()) {\n            println \"#educational_plugin\" + line\n        }\n    }\n}\n\nsubprojects {\n    apply plugin: \u0027application\u0027\n    apply plugin: \u0027java\u0027\n\n    sourceCompatibility \u003d 1.8\n\n    repositories {\n        mavenCentral()\n    }\n\n    dependencies {\n        testCompile group: \u0027junit\u0027, name: \u0027junit\u0027, version: \u00274.12\u0027\n    }\n\n    sourceSets {\n        main {\n            java.srcDir \u0027src\u0027\n        }\n        test {\n            java.srcDir \u0027test\u0027\n        }\n    }\n\n    mainClassName \u003d project.hasProperty(\"mainClass\") ? project.getProperty(\"mainClass\") : \"\"\n\n    test {\n        outputs.upToDateWhen { false }\n        afterTest { TestDescriptor test, TestResult result -\u003e\n            if (result.resultType \u003d\u003d TestResult.ResultType.FAILURE) {\n                def message \u003d result.exception?.message ?: \"Wrong answer\"\n                def lines \u003d message.readLines()\n                println \"#educational_plugin FAILED + \" + lines[0]\n                lines[1..-1].forEach { line -\u003e\n                    println \"#educational_plugin\" + line\n                }\n                // we need this to separate output of different tests\n                println\n            }\n        }\n    }\n\n    def runOutput \u003d new ByteArrayOutputStream()\n    tasks.run.setStandardOutput(runOutput)\n    tasks.run.doLast { printOutput(runOutput) }\n}\n\nproject(\u0027:util\u0027) {\n    dependencies {\n        compile group: \u0027junit\u0027, name: \u0027junit\u0027, version: \u00274.12\u0027\n    }\n}\n\nconfigure(subprojects.findAll {it.name !\u003d \u0027util\u0027}) {\n  dependencies {\n    compile project(\u0027:util\u0027).sourceSets.main.output\n    testCompile project(\u0027:util\u0027).sourceSets.test.output\n  }\n}\n\ntask wrapper(type: Wrapper) {\n  gradleVersion \u003d \u00274.5\u0027\n}\n",
+            "lesson1/Hello, Java!/test/HelloJavaTest.java": "import org.junit.Test;\nimport static org.junit.Assert.*;\n\npublic class HelloJavaTest {\n\n  @Test\n  public void testSolution() {\n    assertEquals(\"You should say hello to Java\", \"Hello, Java!\", HelloJava.sayHello());\n  }\n\n  @Test\n  public void testadd() {\n    assertEquals(\"Solution should be 8\",\n            8 , Calculator.add());\n  }\n\n}"
+          },
+          "update_date": "Dec 31, 1969 7:00:00 PM",
+          "feedback_link": {
+            "link_type": "STEPIK"
+          },
+          "task_type": "edu"
+        }
+      ],
+      "type": "lesson"
+    }
+  ]
+}

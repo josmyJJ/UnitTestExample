@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java_Course.iml" filepath="$PROJECT_DIR$/.idea/Java_Course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lesson1/Hello, Java!/lesson1-Hello,_Java!.iml" filepath="$PROJECT_DIR$/.idea/modules/lesson1/Hello, Java!/lesson1-Hello,_Java!.iml" group="lesson1-Hello,_Java!" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lesson1/Hello, Java!/lesson1-Hello,_Java!_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lesson1/Hello, Java!/lesson1-Hello,_Java!_main.iml" group="lesson1-Hello,_Java!" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lesson1/Hello, Java!/lesson1-Hello,_Java!_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lesson1/Hello, Java!/lesson1-Hello,_Java!_test.iml" group="lesson1-Hello,_Java!" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="util" />
+    </modules>
+  </component>
+</project>
